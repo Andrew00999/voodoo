@@ -1,0 +1,25 @@
+@import "../../utils/mixins.scss";
+
+.wrapper {
+  margin-top: 4.875rem;
+
+  @include onTablet {
+    margin-top: 8.75rem;
+  }
+
+  h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 2.2rem);
+    line-height: 100%;
+    color: #1a1a1a;
+  }
+  p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    margin-top: 1rem;
+    line-height: 175%;
+    color: #1a1a1a;
+  }
+}
