@@ -2,9 +2,19 @@
 
 .main_wrapper {
   margin: 4.875rem 0 8.125rem;
+  display: flex;
+  flex-direction: column;
 
   @include onTablet {
     margin-top: 8.75rem;
+  }
+
+  @include onDesktop {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
   }
 
   h1 {
@@ -24,6 +34,30 @@
   }
 }
 
+.main_content {
+  width: 100%;
+  height: 100%;
+
+  @include onDesktop {
+    width: 60%;
+    height: 100%;
+  }
+}
+
+.desktop_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  row-gap: 2rem;
+
+  @include onDesktop {
+    display: flex;
+    column-gap: 2rem;
+    flex-direction: row;
+  }
+}
+
 .fields_block {
   display: flex;
   flex-direction: column;
@@ -38,13 +72,17 @@
     padding: 1rem 1.2rem;
     box-shadow: 0px 16px 32px rgba(202, 203, 210, 0.25);
     color: #252425;
+    transition: 0.1s;
     &::placeholder {
       font-style: normal;
       font-weight: 400;
-      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-size: 1rem;
       line-height: 175%;
       color: #414042;
       opacity: 0.5;
+    }
+    &:focus {
+      outline: 2px solid rgb(69, 69, 238);
     }
   }
   textarea {
@@ -65,18 +103,31 @@
     text-align: center;
     padding: 1rem 0;
     transition: 0.3s ease-in-out;
-    margin-top: .25rem;
+    margin-top: 0.25rem;
     &:hover {
       opacity: 0.9;
     }
 
     @include onTablet {
-      width: 25%;
+      width: 40%;
     }
   }
 }
 
+.desktop_wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+
+  @include onDesktop {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
 .customField {
+  width: 100%;
   background-color: #fff;
   box-shadow: 0px 16px 32px rgba(202, 203, 210, 0.25);
   span {
@@ -88,5 +139,18 @@
       opacity: 0.5;
       background-color: #414042;
     }
+  }
+}
+
+.map_wrapper {
+  width: 100%;
+  height: 100%;
+  align-self: stretch;
+  margin-top: 4rem;
+
+  @include onDesktop {
+    width: 40%;
+    height: 100%;
+    margin-top: 0;
   }
 }
